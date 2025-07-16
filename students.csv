@@ -1,0 +1,11 @@
+student_id,name,email,major,gpa,enrollment_year
+STU001,John Philip SMITH,alice.johnson@email.com,Computer Science,3.8,2022
+STU002,Bob Smith,bob.smith@email.com,Mathematics,3.6,2021
+STU003,Carol Brown,carol.brown@email.com,Physics,3.9,2023
+STU004,David Wilson,david.wilson@email.com,Engineering,3.7,2020
+STU005,Emma Davis,emma.davis@email.com,Biology,3.5,2022
+STU006,Frank Miller,frank.miller@email.com,Chemistry,3.4,2021
+STU007,Grace Lee,grace.lee@email.com,Psychology,3.8,2023
+STU008,Henry Clark,henry.clark@email.com,Computer Science,3.9,2020
+STU009,Ivy Martinez,ivy.martinez@email.com,Art History,3.6,2022
+STU010,Jack Taylor,jack.taylor@email.com,Business,3.7,2021
