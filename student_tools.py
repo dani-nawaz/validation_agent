@@ -1,6 +1,7 @@
 import pandas as pd
 import os
 from typing import Optional, Dict, Any
+from database import get_enrollement_collection_from_db
 
 def load_student_data(csv_path: str = "students.csv") -> pd.DataFrame:
     """Load student data from CSV file."""
@@ -39,6 +40,26 @@ def get_student_by_id(student_id: str, csv_path: str = "students.csv") -> Option
         print(f"Error reading student data: {e}")
         return None
 
+def get_student_from_db_by_id(student_id: str): 
+
+    """
+    Fetch student record by ID from MongoDB.
+    
+    Args:
+        student_id: The student ID to search for
+        
+    Returns:
+        Dictionary containing student information if found, None otherwise
+    """    
+    try:
+        enrollment_collection = get_enrollement_collection_from_db()
+        student = enrollment_collection.find_one({"uuid_str": student_id})
+        if student:
+            return student
+        return None
+    except Exception as e:
+        print(f"Error fetching student from database: {e}")
+        return None
 def validate_student_id_format(student_id: str) -> bool:
     """
     Validate if student ID follows the expected format (STU + 3 digits).
