@@ -2,6 +2,7 @@ import os
 import asyncio
 import json
 from pydantic import BaseModel
+from database import get_enrollement_data_from_db
 from agents import Agent, Runner, function_tool, RunContextWrapper
 from student_tools import get_student_by_id, validate_student_id_format, get_all_student_ids
 from document_tools import (
@@ -29,6 +30,8 @@ async def fetch_student_record(student_id: str) -> str:
     Returns:
         Formatted string with student information or error message
     """
+    enrollmentForm_data = get_enrollement_data_from_db()
+    print(enrollmentForm_data)
     # Validate format first
     if not validate_student_id_format(student_id):
         return f"Invalid student ID format: {student_id}. Expected format: STU### (e.g., STU001)"
