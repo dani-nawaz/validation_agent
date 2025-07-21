@@ -4,3 +4,7 @@ python-dotenv
 Pillow 
 openai==1.96.1
 openai-agents==0.2.0
+fastapi==0.104.1
+uvicorn[standard]==0.24.0
+pydantic==2.5.0
+pymongo==4.6.0
